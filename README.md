@@ -32,14 +32,13 @@ Load balancing ensures that the application will be highly available, in additio
 	and restrict public access to the servers. Additionally you can restrict who connects to the jumpbox.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems and system metrics.
-- _What does Filebeat watch for?
+- What does Filebeat watch for?
    - Filebeat collects, parses and visualizes common log data
 
-- _What does Metricbeat record?_
+- What does Metricbeat record?_
    - Metricbeat records system and service metrics, this can be used to monitor the performance of the server and external services
 
 The configuration details of each machine may be found below.
-#Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -55,14 +54,14 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the jumpbox machine can accept connections from the Internet.
 Access to this machine is only allowed from the following IP addresses:
-- _98.245.18.195
+- 98.245.18.195
 
 Machines within the network can only be accessed by ssh from the docker container on the jumbox.
-- _Which machine did you allow to access your ELK VM?
+- Which machine did you allow to access your ELK VM?
    - The Elk machine has the public key of the docker container on the jumbox provisioner, 
-     therefore it is what is used to access teh ELK VM 
- What was its IP address?_
--  10.0.0.4
+     therefore it is what is used to access the ELK VM 
+- What was its IP address?_
+   - 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
@@ -80,8 +79,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 <!--#TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.-->
-- 
-- ...
+- Installs Docker
+- Installs Docker module with python3-pip
+- Increases vm memory
+- Downloads elk image & sepecifies ports 
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -94,11 +96,13 @@ This ELK server is configured to monitor the following machines:
 - 10.0.0.7
 
 We have installed the following Beats on these machines:
-- 
-#TODO: Specify which Beats you successfully installed_
+- Used Installed Filebeat on the Web Server machines (10.0.0.5-7)
+   - 
+<!--#TODO: Specify which Beats you successfully installed_-->
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+<!--- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see.--> 
+<!-- E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._-->
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -108,9 +112,9 @@ SSH into the control node and follow the steps below:
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
+<!--TODO: Answer the following questions to fill in the blanks:--> 
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._-->
